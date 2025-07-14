@@ -1,6 +1,26 @@
 # DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning
 
-## Quick Start
+DyG-RAG is **the first event-centric dynamic graph retrieval-augmented generation framework** specifically designed to capture, organize, and reason over temporal knowledge embedded within unstructured text data. By explicitly modeling the temporal dynamics of events as graph-structured representations, DyG-RAG facilitates enhanced temporal reasoning, yielding substantial gains in information retrieval accuracy and generation coherence.
+
+## 🏗️ The overall framework of DyG-RAG
+
+<div align="center">
+  <img src="figs/framework.png" alt="DyG-RAG Framework" width="800">
+</div>
+
+---
+
+## ✨ Key Contributions
+
+1. **First Event-Centric Dynamic Graph RAG**: We introduce the first dynamic graph retrieval-augmented generation system that structures and reasons over knowledge from an event-centric perspective.
+
+2. **Dynamic Event Unit (DEU) Granularity**: We propose a novel DEU granularity that explicitly embeds temporal information into the knowledge organization stage, enabling fine-grained temporal reasoning.
+
+3. **Dynamic Graph Structure**: We leverage a dynamic graph to inherently organize DEUs, creating a navigable structure that effectively models narrative flows and causal dependencies across time.
+
+4. **Empirical Validation**: We have verified DyG-RAG's superior performance across three distinct types of temporal question-answering datasets, demonstrating its effectiveness in real-world scenarios.
+   
+## 🚀 Quick Start
 
 ### 1. Environment Setup
 
@@ -25,7 +45,8 @@ export OPENAI_API_KEY="your_api_key_here"
 
 ```bash
 # Download required models
-python models/download.py
+cd models
+python download.py
 ```
 
 **Downloaded Models:**
@@ -36,16 +57,14 @@ The script downloads two essential models:
 
    - Model name: `cross-encoder/ms-marco-TinyBERT-L-2-v2`
    - Local path: `./models/cross-encoder_ms-marco-TinyBERT-L-2-v2/`
-   - Purpose: Semantic reranking and relevance scoring
    - Size: ~67MB
 2. **NER Model**:
 
    - Model name: `dslim/bert-base-NER`
    - Local path: `./models/dslim_bert_base_ner/`
-   - Purpose: Named entity recognition
    - Size: ~1.2GB
 
-### 4. Local Model Configuration
+### 4. Local Model Configuration[optional]
 
 If you want to use local models instead of OpenAI, you can set up environment variables for the local embedding and LLM configuration (using BGE and Qwen as examples):
 
@@ -71,24 +90,24 @@ python openai_all.py
 python local_BGE_local_LLM.py
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 DyG-RAG/
-├── requirements.txt    # Dependencies
-├── datasets/           # three types of temporal reasoning
-├── examples/          # Usage examples
+├── requirements.txt  # Dependencies
+├── examples/         # Usage examples
 ├── graphrag/         # src codes of DyG-RAG
 ├── demo/             # TimeQA dataset examples
+├── datasets/         # three types of temporal QA datasets
 └── models/           # Downloaded models
 ```
 
-## TODO
+## 📝 TODO
 
-1. 🤖 Support for More Model Choices
-2. 🗄️ Support for Diverse Vector Databases
-3. 📊 Support for Diverse Graph Databases
+1. Support for More Model Choices
+2. Support for Diverse Vector Databases
+3. Support for Diverse Graph Databases
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 This project is built upon the excellent work of [nano-graphrag](https://github.com/gusye1234/nano-graphrag) by Gustavo Ye. We extend our sincere gratitude to the original author for providing a simple, easy-to-hack GraphRAG implementation that serves as the foundation for our DyG-RAG system.
