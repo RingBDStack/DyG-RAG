@@ -1,25 +1,22 @@
-# DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning
+# ⭐ DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning
 
-DyG-RAG is **the first event-centric dynamic graph retrieval-augmented generation framework** specifically designed to capture, organize, and reason over temporal knowledge embedded within unstructured text data. By explicitly modeling the temporal dynamics of events as graph-structured representations, DyG-RAG facilitates enhanced temporal reasoning, yielding substantial gains in information retrieval accuracy and generation coherence.
+DyG-RAG is **the first event-centric dynamic graph retrieval-augmented generation framework** specifically designed to capture, organize, and reason over temporal knowledge embedded within unstructured text data. By explicitly modeling the temporal dynamics of events as graph-structured representations, DyG-RAG facilitates enhanced temporal reasoning, yielding substantial accuracy improvement in temporal QA task.
 
-## 🏗️ The overall framework of DyG-RAG
+### The overall framework of DyG-RAG:
 
 <div align="center">
-  <img src="figs/framework.png" alt="DyG-RAG Framework" width="800">
+  <img src="figs/framework.png" alt="DyG-RAG Framework" width="850">
 </div>
 
 ---
 
 ## ✨ Key Contributions
 
-1. **First Event-Centric Dynamic Graph RAG**: We introduce the first dynamic graph retrieval-augmented generation system that structures and reasons over knowledge from an event-centric perspective.
-
-2. **Dynamic Event Unit (DEU) Granularity**: We propose a novel DEU granularity that explicitly embeds temporal information into the knowledge organization stage, enabling fine-grained temporal reasoning.
-
-3. **Dynamic Graph Structure**: We leverage a dynamic graph to inherently organize DEUs, creating a navigable structure that effectively models narrative flows and causal dependencies across time.
-
+1. **First Dynamic Graph Structure for Temporal Textual Knowledge**: We introduce the first dynamic graph retrieval-augmented generation system that structures and stores temporal textual knowledge from an event-centric perspective.
+2. **Event Granularity with Explicit Temporal Encoding**: We propose a novel dynamic event unit (DEU) granularity that explicitly embeds temporal information into the knowledge organization stage, enabling fine-grained temporal encoding.
+3. **RAG-Reasoning Integration for Downstream Tasks**: The construction of DyG naturally supports the integration of retrieval-augmented generation with temporal reasoning for downstream temporal QA tasks, enabling the Time-CoT prompting approach.
 4. **Empirical Validation**: We have verified DyG-RAG's superior performance across three distinct types of temporal question-answering datasets, demonstrating its effectiveness in real-world scenarios.
-   
+
 ## 🚀 Quick Start
 
 ### 1. Environment Setup
@@ -37,7 +34,7 @@ pip install -r requirements.txt
 Set your OpenAI API key:
 
 ```bash
-# Option 1: Environment variable
+# Option 1: API-Environment variable
 export OPENAI_API_KEY="your_api_key_here"
 ```
 
@@ -90,14 +87,14 @@ python openai_all.py
 python local_BGE_local_LLM.py
 ```
 
-## 📁 Project Structure
+## 📁 Code Structure
 
 ```
 DyG-RAG/
 ├── requirements.txt  # Dependencies
 ├── examples/         # Usage examples
 ├── graphrag/         # src codes of DyG-RAG
-├── demo/             # TimeQA dataset examples
+├── demo/             # TimeQA dataset example
 ├── datasets/         # three types of temporal QA datasets
 └── models/           # Downloaded models
 ```
