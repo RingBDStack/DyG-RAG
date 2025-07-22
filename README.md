@@ -1,4 +1,4 @@
-# ⭐ DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning
+# ⭐ DyG-RAG: Dynamic Graph Retrieval-Augmented Generation with Event-Centric Reasoning ([PDF](https://www.arxiv.org/abs/2507.13396))
 
 DyG-RAG is **the first event-centric dynamic graph retrieval-augmented generation framework** specifically designed to capture, organize, and reason over temporal knowledge embedded within unstructured text data. By explicitly modeling the temporal dynamics of events as graph-structured representations, DyG-RAG facilitates enhanced temporal reasoning, yielding substantial accuracy improvement in temporal QA task.
 
